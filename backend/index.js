@@ -2,7 +2,8 @@ import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 dotenv.config();
-import authRoute from "./route/authRoute.js";
+import authRoute from "./route/authRoute.js"; 
+import productRoute from "./route/productRoute.js";
 import { mongo } from "mongoose";
 
 const app = express();
@@ -10,6 +11,7 @@ const app = express();
 app.use(express.json());
 
 app.use("/api/auth", authRoute);
+app.use("/api/products", productRoute);
 
 async function server() {
   try {
